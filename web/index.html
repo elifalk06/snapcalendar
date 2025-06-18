@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SnapCalendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>SnapCalendar</h1>
+    <p>Type your schedule below. Each line should be formatted as:<br>
+    <code>YYYY-MM-DD HH:MM category description</code></p>
+    <textarea id="scheduleInput" rows="6" cols="60" placeholder="2024-06-10 08:00 school Math class"></textarea>
+    <br>
+    <button id="processButton">Process Schedule</button>
+
+    <h2>Events</h2>
+    <ul id="eventsList"></ul>
+
+    <h2>Preferences</h2>
+    <p>Set early reminder minutes per category (e.g., <code>school:60,soccer:30</code>)</p>
+    <input id="remindersInput" size="40" placeholder="category:minutes,category:minutes">
+    <button id="savePrefs">Save Preferences</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
