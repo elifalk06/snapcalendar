@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preferences</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Preferences</h1>
+    <form method="post">
+        Category: <input type="text" name="category" placeholder="e.g., school"><br>
+        Reminder Minutes: <input type="number" name="minutes" value="60"><br>
+        <button type="submit">Save</button>
+    </form>
+    <h2>Current Preferences</h2>
+    <ul>
+    {% for cat, mins in prefs %}
+        <li>{{ cat }} - {{ mins }} minutes before</li>
+    {% else %}
+        <li>No preferences set.</li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back</a>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

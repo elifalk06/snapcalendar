@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SnapCalendar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>SnapCalendar</h1>
+    <form method="post">
+        <textarea name="events" rows="5" cols="40" placeholder="Enter events, one per line"></textarea><br>
+        <button type="submit">Add Events</button>
+    </form>
+    <div id="added-msg" style="display:none;color:green;">Events added!</div>
+    <h2>Upcoming Events</h2>
+    <ul>
+    {% for id, title, start, remind in events %}
+        <li>{{ start }} - {{ title }} (reminder {{ remind }} min before)</li>
+    {% else %}
+        <li>No events yet.</li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('preferences') }}">Preferences</a>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
